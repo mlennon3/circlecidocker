@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - checkout
+      - run: docker pull mlennon3/circdock-ci
       - run: docker build -t circdock-ci mlennon3/circdock-ci
       - run: docker run -t circdock-ci mlennon3/circdock-ci
 
