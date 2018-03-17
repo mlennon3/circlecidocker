@@ -16,7 +16,7 @@ jobs:
       - run: docker run --name some-postgres -e POSTGRES_PASSWORD= -d postgres:9.6.4
       - run: docker pull mlennon3/circdock-ci
       - run: docker build -t circdock-ci -f ./.circleci/Dockerfile .
-      - run: docker run -p --link some-postgres:postgres-host circdock-ci
+      - run: docker run --link some-postgres:postgres-host circdock-ci
 
       # Download and cache dependencies
       - restore_cache:
