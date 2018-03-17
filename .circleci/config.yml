@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: docker run --name some-postgres -e POSTGRES_PASSWORD= -d postgres:9.6.4
       - run: docker pull mlennon3/circdock-ci
-      - run: docker run -v.:/home --link some-postgres:postgres-host circdock-ci
+      - run: docker run -v.:/home --link some-postgres:postgres-host mlennon3/circdock-ci
 
       # Download and cache dependencies
       - restore_cache:
@@ -29,12 +29,3 @@ jobs:
       # other common Python testing frameworks include pytest and nose
       # https://pytest.org
       # https://nose.readthedocs.io
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            python circdock/manage.py test
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
