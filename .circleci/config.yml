@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: docker run --name some-postgres -e POSTGRES_PASSWORD= -d postgres:9.6.4
       - run: docker pull mlennon3/circdock-ci
-      - run: docker run --link some-postgres:postgres-host -it --entrypoint /bin/bash -it -v $(pwd):/home --rm mlennon3/circdock-ci
+      - run: docker run --link some-postgres:postgres-host -v $(pwd):/home --rm mlennon3/circdock-ci
 
 
       # Download and cache dependencies
