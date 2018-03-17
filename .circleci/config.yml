@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run: docker pull mlennon3/circdock-ci
-      - run: docker build -t circdock-ci -f .circleci/Dockerfile
+      - run: docker build -t circdock-ci -f ./.circleci/Dockerfile .
       - run: docker run -t circdock-ci circdock-ci
 
       # Download and cache dependencies
