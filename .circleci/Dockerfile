@@ -8,5 +8,7 @@ WORKDIR /home
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "/home/circdock/manage.py", "test"]
+WORKDIR /home/circdock
+
+CMD ["python", "manage.py", "test"]
 
