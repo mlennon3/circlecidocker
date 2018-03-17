@@ -10,5 +10,5 @@ RUN pip install -r requirements.txt
 
 WORKDIR /home/circdock
 
-CMD ["python", "manage.py", "test"]
+ENTRYPOINT ["./entry.sh"]
 
